@@ -13,17 +13,17 @@ jobs:
   print-username:
     name: Pass input and secrets print
     runs-on: ubuntu-latest
-    #environment: dev
+    environment: dev
     steps:
       - name: Print the input name to STDOUT
         run: echo The username is ${{ inputs.username }}        
       - name: Set up secret file
-       # env:
-        #  SEC_KEY: ${{ secrets.MY_ENV_KEY}}
-      #  run: |
-        #  echo "##  GITHUB SECRETS  ##" >> secrets.txt
-        #  echo "MyEnvKey " $SEC_KEY >> secrets.txt
-       #   cat secrets.txt
-    #  - name: Run tmate
-     #   uses: mxschmitt/action-tmate@v3
-     #   timeout-minutes: 15
+        env:
+         SEC_KEY: ${{ secrets.MY_ENV_KEY}}
+        run: |
+          echo "##  GITHUB SECRETS  ##" >> secrets.txt
+          echo "MyEnvKey " $SEC_KEY >> secrets.txt
+          cat secrets.txt
+      - name: Run tmate
+        uses: mxschmitt/action-tmate@v3
+        timeout-minutes: 15
