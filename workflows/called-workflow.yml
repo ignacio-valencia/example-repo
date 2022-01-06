@@ -22,7 +22,8 @@ jobs:
           SEC_KEY: ${{ secrets.MY_ENV_KEY}}
         run: |
           echo "##  GITHUB SECRETS  ##" >> secrets.txt
-          echo "MyEnvKey " $SEC_KEY >> secrets.txt        
+          echo "MyEnvKey " $SEC_KEY >> secrets.txt
+          cat secrets.txt
       - name: Run tmate
         uses: mxschmitt/action-tmate@v3
         timeout-minutes: 15
