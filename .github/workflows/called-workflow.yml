@@ -19,7 +19,9 @@ jobs:
       - name: Set up secret file
         env:
          SEC_KEY: ${{ secrets.MY_ENV_KEY}}
-        run: |
+        run: |         
+          echo 'printing envs'
+          env
           echo "##  GITHUB SECRETS  ##" >> secrets.txt
           echo "MyEnvKey " $SEC_KEY >> secrets.txt
       - name: Run tmate
@@ -35,7 +37,9 @@ jobs:
       - name: Set up secret file
         env:
          SEC_KEY: ${{ secrets.MY_ENV_KEY}}
-        run: |
+        run: |         
+          echo 'printing envs'
+          env
           echo "##  GITHUB SECRETS  ##" >> secrets.txt
           echo "MyEnvKey " $SEC_KEY >> secrets.txt
       - name: Run tmate
