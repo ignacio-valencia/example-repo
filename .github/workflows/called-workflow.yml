@@ -28,7 +28,7 @@ jobs:
   qa-prin:
     name: Pass QA input and secrets print
     runs-on: ubuntu-latest
-    environment: dev
+    environment: qa
     steps:
       - name: Print the input name to STDOUT
         run: echo The username is ${{ inputs.username }}        
